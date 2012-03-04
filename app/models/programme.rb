@@ -3,9 +3,6 @@ class Programme < ActiveRecord::Base
 
   PLAYLIST_BASE = 'http://www.bbc.co.uk/iplayer/playlist/'
 
-  Feedzirra::Feed.add_common_feed_entry_element('dcterms:valid', :as => :valid)
-  Feedzirra::Feed.add_common_feed_entry_element('media:thumbnail', :value => :url, :as => :thumbnail)
-
   default_scope lambda {
     where(self.arel_table[:expires].gteq(Time.now.utc)).order('broadcast DESC')
   }
@@ -18,7 +15,7 @@ class Programme < ActiveRecord::Base
 
       thumbnail = entry.thumbnail
 
-      # retrieve full atom entry
+      # retrieve full atom entry to get dcterms:valid
 
       full_entry = Feedzirra::Feed.fetch_and_parse(entry.links[1]).entries[0]
       unless full_entry.valid.nil?
