@@ -1,0 +1,11 @@
+<div id="content">
+  <h1>Feeds</h1>
+  <% for f in @feeds %>
+    <div class="feed">
+      <%= link_to f do %>
+        <div class="name"><%= f.name %></div>
+        <div class="count"><%= f.programmes.length %> programmes</div>
+      <% end %>
+      </div>
+  <% end %>
+</div>

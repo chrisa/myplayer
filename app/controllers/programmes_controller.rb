@@ -1,7 +1,7 @@
 class ProgrammesController < ApplicationController
 
   def index
-    @programmes = Programme.find(:all)
+    @programmes = Programme.find(:all, :include => :play)
   end
 
   def show

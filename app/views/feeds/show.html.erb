@@ -1,0 +1,13 @@
+<div id="content">
+  <p><%= link_to 'Back', '/feeds' %></p>
+  <h1><%= @feed.name %></h1>
+  <% for p in @feed.programmes %>
+    <div class="programme">
+      <%= link_to p do %>
+        <div class="title"><%= p.title %></div>
+        <div class="date">Broadcast <%= l p.broadcast, :format => :long %></div>
+        <div class="details"><%= p.duration / 60 %> minutes, expires <%= l p.expires, :format => :long %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

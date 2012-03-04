@@ -2,6 +2,9 @@
   <ul>
     <% for p in @programmes %>
     <li><%= link_to p.title, p %></li>
+    <% if p.play %>
+      <p>in playlist</p>
+    <% end %>
     <% end %>
   </ul>
 </div>
