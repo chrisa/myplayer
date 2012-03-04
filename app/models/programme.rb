@@ -1,5 +1,4 @@
 class Programme < ActiveRecord::Base
-  has_one :play
   belongs_to :feed
 
   PLAYLIST_BASE = 'http://www.bbc.co.uk/iplayer/playlist/'
