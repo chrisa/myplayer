@@ -5,6 +5,7 @@
     <div class="programme">
       <%= link_to p do %>
         <div class="title"><%= p.title %></div>
+        <img class="image" src="<%= p.image_url %>"/>
         <div class="date">Broadcast <%= l p.broadcast, :format => :long %></div>
         <div class="details"><%= p.duration / 60 %> minutes, expires <%= l p.expires, :format => :long %></div>
       <% end %>

@@ -32,6 +32,10 @@ body {
     color: #777;
 }
 
+.programme .image {
+    padding: 10px;
+}
+
 .feed .name {
     font-size: 17px;
     font-weight: bold;
